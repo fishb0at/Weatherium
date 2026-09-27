@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weatherium - a weather check page</title>
+        <link rel="stylesheet" href="css/design.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet" />
+        
+        
+    </head>
+
+    <body>
+        <h1 class="title">
+            <img src="img/Weatherium.png"/>
+            <p>Weatherium is a weather check page that features a terrarium displaying real-time weather. 
+            </p>
+        </h1>
+        
+
+        <div class="main">
+            <div class="board-wrapper">
+                <!-- temperature board -->
+                <div class="tempboard">
+                    <img src="img/tempboard.png" />
+                    <div class="text-overlay">
+                        <div id="temp"></div>
+                        <div id="weather"></div>
+                    </div>
+                </div>
+
+                <!-- weather icon -->
+                <div class="weather-icon-board">
+                    <img src="img/weather-icon.png" />
+                    <img id="icon" />
+                    <!--变量-->
+                </div>
+
+                <!-- teperature board 2 -->
+                <div class="tempboard2">
+                    <img src="img/tempboard2.png" />
+                    <div class="text-overlay">
+                        <div class="text2">
+                            Feels like
+                            <div id="feelslike"></div>
+                            <hr />
+                            ↑ &nbsp;&nbsp;&nbsp;<span id="max"></span>
+                            <br />
+                            ↓&nbsp;&nbsp;&nbsp;<span id="min"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- next 4 days board -->
+                <div class="next4board">
+                    <img src="img/nextboard.png" />
+                    <div class="text-overlay">
+                        <div class="next4text">Next 4 days</div>
+                        <div class="forecasttext">
+                            <div id="forecast1"></div>
+                            <hr />
+                            <div id="forecast2"></div>
+                            <hr />
+                            <div id="forecast3"></div>
+                            <hr />
+                            <div id="forecast4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- terrarium -->
+                <div id="terrarium">
+                    <img id="terrarium-img" />
+                </div>
+                <div id="date"></div>
+
+                <!-- circle info -->
+                <div class="circle-container">
+                    <div class="circle"><span id="wind"></span></div>
+                    <p id="unit1">km/h</p>
+                    <div class="circle"><span id="humidity"></span></div>
+                    <p id="unit2">%</p>
+                    <div class="circle"><span id="pressure"></span></div>
+                    <p id="unit3">hpa</p>
+                    <div class="circle"><span id="visibility"></span></div>
+                    <p id="unit4">km</p>
+                </div>
+                <div class="desc">
+                    <p class="wind">Wind</p>
+                    <p class="humidity">Humidity</p>
+                    <p class="pressure">Pressure</p>
+                    <p class="visibility">Visibility</p>
+                </div>
+                <!--<div id = "desc"></div>-->
+            </div>
+            
+            <hr>
+            <div class="interaction">
+                <div id="search-weather">
+                    <p>Check by city</p>
+                    <input type="text" id="cityInput" placeholder="City name" />
+                <button onclick="getWeather()">Submit</button>
+               </div>
+                
+                <div id="suggest">
+                    <p>Get next 4 hours temp
+                        <button onclick="getHourly()" id="getHourlyButton">Submit</button>
+                    </p>
+                
+                    <span id="hour1"></span> 
+                    <span id="hour2"></span> 
+                    <span id="hour3"></span>
+                    <span id="hour4"></span> 
+                </div>
+            </div>
+        </div>
+        <div class="foot"></div>
+        <!-- Javascript goes after the page -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
